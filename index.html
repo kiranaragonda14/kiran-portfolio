@@ -31,7 +31,7 @@
       inset: 0;
       background:
         radial-gradient(circle at 15% 20%, rgba(56, 189, 248, 0.10), transparent 25%),
-        radial-gradient(circle at 85% 35%, rgba(139, 92, 246, 0.13), transparent 28%),
+        radial-gradient(circle at 85% 35%, rgba(139, 92, 246, 0.14), transparent 28%),
         radial-gradient(circle at 50% 90%, rgba(34, 211, 238, 0.08), transparent 25%);
       pointer-events: none;
       z-index: -2;
@@ -39,18 +39,18 @@
 
     .cursor-glow {
       position: fixed;
-      width: 220px;
-      height: 220px;
+      width: 180px;
+      height: 180px;
       border-radius: 50%;
       pointer-events: none;
-      background: radial-gradient(circle, rgba(34, 211, 238, 0.14), rgba(139, 92, 246, 0.06), transparent 72%);
+      background: radial-gradient(circle, rgba(34, 211, 238, 0.12), rgba(139, 92, 246, 0.05), transparent 72%);
       transform: translate(-50%, -50%);
       z-index: 9999;
     }
 
     header {
       width: 100%;
-      background: rgba(5, 8, 22, 0.92);
+      background: rgba(5, 8, 22, 0.94);
       border-bottom: 1px solid rgba(148, 163, 184, 0.15);
       position: sticky;
       top: 0;
@@ -290,7 +290,7 @@
     }
 
     .container {
-      max-width: 1200px;
+      max-width: 1120px;
       margin: auto;
     }
 
@@ -357,22 +357,73 @@
       color: #dbeafe;
     }
 
-    .skills-grid,
-    .projects-grid,
-    .experience-grid {
+    .core-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(255px, 1fr));
       gap: 24px;
     }
 
-    .card {
+    .projects-list {
+      display: grid;
+      gap: 22px;
+      max-width: 920px;
+      margin: auto;
+    }
+
+    .experience-timeline {
+      max-width: 920px;
+      margin: auto;
+      position: relative;
+      padding-left: 34px;
+    }
+
+    .experience-timeline::before {
+      content: "";
+      position: absolute;
+      left: 9px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(#22d3ee, #8b5cf6);
+    }
+
+    .timeline-card {
+      margin-bottom: 24px;
+      position: relative;
+    }
+
+    .timeline-card::before {
+      content: "";
+      position: absolute;
+      left: -33px;
+      top: 28px;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: #8b5cf6;
+      box-shadow: 0 0 18px rgba(139, 92, 246, 0.85);
+    }
+
+    .card,
+    .timeline-card {
       background: rgba(15, 23, 42, 0.72);
       border: 1px solid rgba(148, 163, 184, 0.18);
       border-radius: 22px;
       padding: 28px;
-      position: relative;
       overflow: hidden;
       transition: 0.35s;
+    }
+
+    .card {
+      position: relative;
     }
 
     .card::before {
@@ -397,20 +448,29 @@
       z-index: 2;
     }
 
-    .card:hover {
-      transform: translateY(-9px);
+    .card:hover,
+    .timeline-card:hover {
+      transform: translateY(-8px);
       border-color: #22d3ee;
       box-shadow: 0 0 22px rgba(34, 211, 238, 0.14);
     }
 
-    .card h3 {
+    .card h3,
+    .timeline-card h3 {
       color: #22d3ee;
       font-size: 22px;
-      margin-bottom: 16px;
+      margin-bottom: 12px;
+    }
+
+    .timeline-card h4 {
+      color: #ffffff;
+      font-size: 17px;
+      margin-bottom: 10px;
     }
 
     .card p,
-    .card li {
+    .card li,
+    .timeline-card p {
       color: #dbeafe;
       font-size: 15.5px;
     }
@@ -442,53 +502,103 @@
       background: rgba(34, 211, 238, 0.18);
     }
 
+    .repo-btn {
+      display: inline-block;
+      margin-top: 18px;
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: rgba(139, 92, 246, 0.22);
+      border: 1px solid rgba(139, 92, 246, 0.35);
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 800;
+      transition: 0.3s;
+    }
+
+    .repo-btn:hover {
+      background: rgba(139, 92, 246, 0.38);
+      transform: translateY(-3px);
+    }
+
     .contact {
       text-align: center;
-      background: linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(8, 47, 73, 0.65));
+      background:
+        linear-gradient(rgba(5, 8, 22, 0.88), rgba(5, 8, 22, 0.92)),
+        url("https://images.unsplash.com/photo-1639322537228-f710d846310a?auto=format&fit=crop&w=1600&q=80");
+      background-size: cover;
+      background-position: center;
       border-top: 1px solid rgba(34, 211, 238, 0.18);
     }
 
-    .contact .section-title {
+    .connect-title {
+      font-size: 48px;
       color: #ffffff;
-      text-shadow: 0 0 18px rgba(34, 211, 238, 0.35);
+      font-weight: 900;
+      margin-bottom: 36px;
+      text-shadow: 0 0 20px rgba(34, 211, 238, 0.35);
     }
 
-    .contact .section-title span {
-      color: #22d3ee;
-    }
-
-    .contact-card {
-      max-width: 760px;
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
+      max-width: 1100px;
       margin: auto;
-      background: rgba(15, 23, 42, 0.82);
-      border: 1px solid rgba(34, 211, 238, 0.24);
-      border-radius: 22px;
-      padding: 34px;
-      box-shadow: 0 0 30px rgba(34, 211, 238, 0.10);
     }
 
-    .contact p {
-      color: #e0f2fe;
-      font-size: 18px;
-      margin-bottom: 14px;
-    }
-
-    .contact a {
-      color: #67e8f9;
+    .contact-box {
+      background: rgba(15, 23, 42, 0.78);
+      border: 1px solid rgba(148, 163, 184, 0.22);
+      border-radius: 24px;
+      padding: 38px 22px;
       text-decoration: none;
-      font-weight: 700;
+      color: #ffffff;
+      transition: 0.35s;
+      min-height: 170px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      overflow-wrap: anywhere;
+      gap: 16px;
     }
 
-    .contact a:hover {
-      color: #ffffff;
+    .contact-box:hover {
+      transform: translateY(-8px);
+      border-color: #22d3ee;
+      box-shadow: 0 0 28px rgba(34, 211, 238, 0.20);
+    }
+
+    .contact-icon {
+      color: #22d3ee;
+      font-size: 42px;
+      font-weight: 900;
+    }
+
+    .contact-box p {
+      color: #f8fafc;
+      font-size: 17px;
+      font-weight: 700;
+      word-break: break-word;
     }
 
     footer {
-      padding: 26px;
+      padding: 36px 24px;
       text-align: center;
       border-top: 1px solid rgba(148, 163, 184, 0.15);
       color: #94a3b8;
       background: rgba(5, 8, 22, 0.96);
+    }
+
+    footer h3 {
+      color: #ffffff;
+      font-size: 24px;
+      margin-bottom: 8px;
+    }
+
+    footer p {
+      margin-bottom: 8px;
     }
 
     .reveal {
@@ -537,6 +647,10 @@
       .role-card:nth-child(3) {
         grid-column: span 1;
       }
+
+      .experience-timeline {
+        padding-left: 24px;
+      }
     }
   </style>
 </head>
@@ -552,9 +666,10 @@
       <ul>
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
+        <li><a href="#core">Core</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#experience">Experience</a></li>
+        <li><a href="#skills">Skills</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
@@ -634,12 +749,227 @@
     </div>
   </section>
 
+  <section id="core" class="reveal">
+    <div class="container">
+      <h2 class="section-title">Core <span>Expertise</span></h2>
+
+      <p class="section-subtitle">
+        Main areas where I build production-ready business solutions.
+      </p>
+
+      <div class="core-grid">
+        <div class="card">
+          <h3>AI / GenAI</h3>
+          <div class="tags">
+            <span class="tag">LLMs</span>
+            <span class="tag">RAG</span>
+            <span class="tag">LangChain</span>
+            <span class="tag">LangGraph</span>
+            <span class="tag">Azure OpenAI</span>
+            <span class="tag">Prompt Engineering</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Backend / APIs</h3>
+          <div class="tags">
+            <span class="tag">Python</span>
+            <span class="tag">FastAPI</span>
+            <span class="tag">Flask</span>
+            <span class="tag">REST APIs</span>
+            <span class="tag">Streamlit</span>
+            <span class="tag">Docker</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Data / Cloud</h3>
+          <div class="tags">
+            <span class="tag">SQL</span>
+            <span class="tag">PySpark</span>
+            <span class="tag">Databricks</span>
+            <span class="tag">Delta Lake</span>
+            <span class="tag">AWS</span>
+            <span class="tag">Azure</span>
+            <span class="tag">MLflow</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="reveal">
+    <div class="container">
+      <h2 class="section-title">Featured <span>Projects</span></h2>
+
+      <p class="section-subtitle">
+        Selected AI engineering projects demonstrating GenAI systems, RAG platforms,
+        agent workflows, secure backend architecture, and cloud-native data solutions.
+      </p>
+
+      <div class="projects-list">
+
+        <div class="card">
+          <h3>Healthcare GenAI RAG Workflow Intelligence Assistant</h3>
+          <p>
+            Built a GenAI-powered healthcare workflow assistant using Python,
+            Streamlit, retrieval-based search, and workflow automation. The system
+            loads synthetic order, supplier, inventory, ticket, and SOP context,
+            calculates risk, generates recommendations, supports human review,
+            and writes audit logs.
+          </p>
+
+          <div class="tags">
+            <span class="tag">Python</span>
+            <span class="tag">Streamlit</span>
+            <span class="tag">RAG Concepts</span>
+            <span class="tag">TF-IDF</span>
+            <span class="tag">Scikit-learn</span>
+            <span class="tag">Audit Logs</span>
+          </div>
+
+          <a href="https://github.com/kiranaragonda14/healthcare-genai-rag-workflow-assistant" target="_blank" class="repo-btn">View Repository →</a>
+        </div>
+
+        <div class="card">
+          <h3>Enterprise Document Intelligence Platform</h3>
+          <p>
+            Designed RAG pipelines for enterprise document search using embeddings,
+            semantic chunking, vector databases, FastAPI services, access controls,
+            and secure AI-assisted knowledge retrieval.
+          </p>
+
+          <div class="tags">
+            <span class="tag">RAG</span>
+            <span class="tag">Vector Search</span>
+            <span class="tag">FastAPI</span>
+            <span class="tag">Embeddings</span>
+            <span class="tag">LLMs</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>AI/ML Fraud Intelligence System</h3>
+          <p>
+            Developed real-time fraud analytics using Python, machine learning,
+            streaming data, feature engineering, graph analysis, monitoring,
+            and production model deployment practices.
+          </p>
+
+          <div class="tags">
+            <span class="tag">Python</span>
+            <span class="tag">ML</span>
+            <span class="tag">Streaming</span>
+            <span class="tag">Feature Engineering</span>
+            <span class="tag">MLOps</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="experience" class="reveal">
+    <div class="container">
+      <h2 class="section-title">Professional <span>Experience</span></h2>
+
+      <p class="section-subtitle">
+        Experience across healthcare, banking, insurance, retail, and enterprise analytics.
+      </p>
+
+      <div class="experience-timeline">
+
+        <div class="timeline-card">
+          <h3>Senior GenAI / ML Engineer</h3>
+          <h4>McKesson</h4>
+          <p>
+            Built enterprise GenAI, RAG workflows, healthcare workflow intelligence,
+            payment fraud intelligence, Python APIs, Databricks pipelines, ML systems,
+            and production AI platforms.
+          </p>
+          <div class="tags">
+            <span class="tag">GenAI</span>
+            <span class="tag">RAG</span>
+            <span class="tag">Python</span>
+            <span class="tag">Databricks</span>
+            <span class="tag">MLOps</span>
+          </div>
+        </div>
+
+        <div class="timeline-card">
+          <h3>Senior AI/ML Engineer</h3>
+          <h4>Wells Fargo</h4>
+          <p>
+            Developed internal AI document intelligence platforms using RAG,
+            vector search, LLM workflows, FastAPI, secure access patterns,
+            and cloud-based data systems.
+          </p>
+          <div class="tags">
+            <span class="tag">LLMs</span>
+            <span class="tag">Vector Search</span>
+            <span class="tag">FastAPI</span>
+            <span class="tag">Document AI</span>
+          </div>
+        </div>
+
+        <div class="timeline-card">
+          <h3>Data Scientist / AI-ML Engineer</h3>
+          <h4>New York Life Insurance</h4>
+          <p>
+            Worked on underwriting, claims risk analytics, actuarial data workflows,
+            Azure data pipelines, Databricks processing, machine learning models,
+            and risk scoring solutions.
+          </p>
+          <div class="tags">
+            <span class="tag">Azure</span>
+            <span class="tag">Databricks</span>
+            <span class="tag">Risk Analytics</span>
+            <span class="tag">ML Models</span>
+          </div>
+        </div>
+
+        <div class="timeline-card">
+          <h3>Data Scientist / ML Engineer</h3>
+          <h4>Kroger</h4>
+          <p>
+            Built demand forecasting, inventory optimization, retail analytics,
+            PySpark pipelines, SQL transformations, time-series models,
+            and machine learning workflows.
+          </p>
+          <div class="tags">
+            <span class="tag">Forecasting</span>
+            <span class="tag">PySpark</span>
+            <span class="tag">SQL</span>
+            <span class="tag">Retail Analytics</span>
+          </div>
+        </div>
+
+        <div class="timeline-card">
+          <h3>Data Scientist / Data Engineer</h3>
+          <h4>Zensar Technologies</h4>
+          <p>
+            Supported enterprise BI, predictive analytics, SQL reporting,
+            Python-based data analysis, dashboarding, segmentation,
+            and early machine learning use cases.
+          </p>
+          <div class="tags">
+            <span class="tag">Python</span>
+            <span class="tag">SQL</span>
+            <span class="tag">BI</span>
+            <span class="tag">Analytics</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <section id="skills" class="reveal">
     <div class="container">
       <h2 class="section-title">Technical <span>Skills</span></h2>
 
       <p class="section-subtitle">
-        Skills organized by real project usage across GenAI, backend engineering,
+        Detailed skills organized by real project usage across GenAI, backend engineering,
         data engineering, cloud platforms, security, and production deployment.
       </p>
 
@@ -749,136 +1079,39 @@
     </div>
   </section>
 
-  <section id="projects" class="reveal">
-    <div class="container">
-      <h2 class="section-title">Featured <span>Projects</span></h2>
-
-      <p class="section-subtitle">
-        Selected AI engineering projects demonstrating GenAI systems, RAG platforms,
-        agent workflows, secure backend architecture, and cloud-native data solutions.
-      </p>
-
-      <div class="projects-grid">
-
-        <div class="card">
-          <h3>Healthcare GenAI RAG Workflow Intelligence Assistant</h3>
-          <p>
-            Built a GenAI-powered healthcare workflow assistant using Python,
-            Streamlit, retrieval-based search, and workflow automation. The system
-            loads synthetic order, supplier, inventory, ticket, and SOP context,
-            calculates risk, generates recommendations, supports human review,
-            and writes audit logs.
-          </p>
-
-          <div class="tags">
-            <span class="tag">Python</span>
-            <span class="tag">Streamlit</span>
-            <span class="tag">RAG Concepts</span>
-            <span class="tag">TF-IDF</span>
-            <span class="tag">Scikit-learn</span>
-            <span class="tag">Audit Logs</span>
-          </div>
-        </div>
-
-        <div class="card">
-          <h3>Enterprise Document Intelligence Platform</h3>
-          <p>
-            Designed RAG pipelines for enterprise document search using embeddings,
-            semantic chunking, vector databases, FastAPI services, access controls,
-            and secure AI-assisted knowledge retrieval.
-          </p>
-
-          <div class="tags">
-            <span class="tag">RAG</span>
-            <span class="tag">Vector Search</span>
-            <span class="tag">FastAPI</span>
-            <span class="tag">Embeddings</span>
-            <span class="tag">LLMs</span>
-          </div>
-        </div>
-
-        <div class="card">
-          <h3>AI/ML Fraud Intelligence System</h3>
-          <p>
-            Developed real-time fraud analytics using Python, machine learning,
-            streaming data, feature engineering, graph analysis, monitoring,
-            and production model deployment practices.
-          </p>
-
-          <div class="tags">
-            <span class="tag">Python</span>
-            <span class="tag">ML</span>
-            <span class="tag">Streaming</span>
-            <span class="tag">Feature Engineering</span>
-            <span class="tag">MLOps</span>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <section id="experience" class="reveal">
-    <div class="container">
-      <h2 class="section-title">Professional <span>Experience</span></h2>
-
-      <p class="section-subtitle">
-        Experience across healthcare, banking, insurance, retail, and enterprise analytics.
-      </p>
-
-      <div class="experience-grid">
-
-        <div class="card">
-          <h3>Senior GenAI / ML Engineer</h3>
-          <p><strong>McKesson</strong></p>
-          <p>
-            Built enterprise GenAI, RAG workflows, payment fraud intelligence,
-            Python APIs, Databricks pipelines, ML systems, and production AI platforms.
-          </p>
-        </div>
-
-        <div class="card">
-          <h3>Senior AI/ML Engineer</h3>
-          <p><strong>Wells Fargo</strong></p>
-          <p>
-            Developed internal AI document intelligence platforms using RAG,
-            vector search, LLM workflows, FastAPI, secure access patterns,
-            and cloud-based data systems.
-          </p>
-        </div>
-
-        <div class="card">
-          <h3>Data Scientist / AI Engineer</h3>
-          <p><strong>New York Life, Kroger, Zensar</strong></p>
-          <p>
-            Delivered ML models, forecasting solutions, underwriting analytics,
-            demand planning, ETL pipelines, dashboards, and enterprise BI solutions.
-          </p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
   <section id="contact" class="contact reveal">
     <div class="container">
-      <h2 class="section-title">Contact <span>Me</span></h2>
+      <h2 class="connect-title">Let's Connect</h2>
 
-      <p class="section-subtitle">
-        Open to discussing Generative AI, RAG, Python, Data Engineering, AI/ML, and cloud platform opportunities.
-      </p>
+      <div class="contact-grid">
 
-      <div class="contact-card">
-        <p><strong>Email:</strong> <a href="mailto:kiranaragonda14@gmail.com">kiranaragonda14@gmail.com</a></p>
-        <p><strong>Phone:</strong> <a href="tel:+13305320290">+1 330-532-0290</a></p>
-        <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/kiranreddy98" target="_blank">www.linkedin.com/in/kiranreddy98</a></p>
-        <p><strong>GitHub:</strong> <a href="https://github.com/kiranaragonda14" target="_blank">github.com/kiranaragonda14</a></p>
-        <p><strong>Portfolio:</strong> <a href="https://kiranaragonda14.github.io/kiran-portfolio" target="_blank">kiranaragonda14.github.io/kiran-portfolio</a></p>
+        <a class="contact-box" href="mailto:kiranaragonda14@gmail.com">
+          <div class="contact-icon">✉</div>
+          <p>kiranaragonda14@gmail.com</p>
+        </a>
+
+        <a class="contact-box" href="tel:+13305320290">
+          <div class="contact-icon">☎</div>
+          <p>+1 330-532-0290</p>
+        </a>
+
+        <a class="contact-box" href="https://www.linkedin.com/in/kiranreddy98" target="_blank">
+          <div class="contact-icon">in</div>
+          <p>LinkedIn Profile</p>
+        </a>
+
+        <a class="contact-box" href="https://github.com/kiranaragonda14" target="_blank">
+          <div class="contact-icon">Git</div>
+          <p>github.com/kiranaragonda14</p>
+        </a>
+
       </div>
     </div>
   </section>
 
   <footer>
+    <h3>Kiran Reddy</h3>
+    <p>Senior Generative AI Engineer | Agentic AI | RAG | Data Engineering</p>
     <p>© 2026 Kiran Reddy. All Rights Reserved.</p>
   </footer>
 
