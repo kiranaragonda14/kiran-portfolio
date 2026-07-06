@@ -25,17 +25,16 @@
       overflow-x: hidden;
     }
 
-    .cursor-glow {
-      position: fixed;
-      width: 280px;
-      height: 280px;
-      border-radius: 50%;
-      pointer-events: none;
-      background: radial-gradient(circle, rgba(56, 189, 248, 0.25), transparent 65%);
-      transform: translate(-50%, -50%);
-      z-index: 9999;
-      mix-blend-mode: screen;
-    }
+.cursor-glow {
+  position: fixed;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  pointer-events: none;
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.70), rgba(52, 211, 153, 0.25), transparent 70%);
+  transform: translate(-50%, -50%);
+  z-index: 99999;
+}
 
     header {
       width: 100%;
@@ -823,24 +822,43 @@
 
     reveal();
 
-    const cursorGlow = document.querySelector(".cursor-glow");
+   <script>
+  window.addEventListener("scroll", reveal);
 
-    document.addEventListener("mousemove", function(e) {
-      cursorGlow.style.left = e.clientX + "px";
-      cursorGlow.style.top = e.clientY + "px";
+  function reveal() {
+    const reveals = document.querySelectorAll(".reveal");
+
+    for (let i = 0; i < reveals.length; i++) {
+      const windowHeight = window.innerHeight;
+      const elementTop = reveals[i].getBoundingClientRect().top;
+      const elementVisible = 120;
+
+      if (elementTop < windowHeight - elementVisible) {
+        reveals[i].classList.add("active");
+      }
+    }
+  }
+
+  reveal();
+
+  const cursorGlow = document.querySelector(".cursor-glow");
+
+  window.addEventListener("mousemove", function(event) {
+    cursorGlow.style.left = event.clientX + "px";
+    cursorGlow.style.top = event.clientY + "px";
+  });
+
+  document.querySelectorAll(".card").forEach(function(card) {
+    card.addEventListener("mousemove", function(event) {
+      const rect = card.getBoundingClientRect();
+      const x = event.clientX - rect.left;
+      const y = event.clientY - rect.top;
+
+      card.style.setProperty("--mouse-x", x + "px");
+      card.style.setProperty("--mouse-y", y + "px");
     });
-
-    document.querySelectorAll(".card").forEach(function(card) {
-      card.addEventListener("mousemove", function(e) {
-        const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-
-        card.style.setProperty("--mouse-x", x + "px");
-        card.style.setProperty("--mouse-y", y + "px");
-      });
-    });
-  </script>
+  });
+</script>
 
 </body>
 </html>
