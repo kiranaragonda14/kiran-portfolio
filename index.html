@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kiran Reddy | AI Portfolio</title>
+
+  <title>Kiran Reddy | Senior Generative AI Engineer</title>
 
   <style>
     * {
@@ -13,94 +14,96 @@
       font-family: Arial, Helvetica, sans-serif;
     }
 
-    body {
-      background: #0b1520;
-      color: #ffffff;
-      line-height: 1.6;
-    }
-
     html {
       scroll-behavior: smooth;
     }
 
+    body {
+      background: #07111f;
+      color: #ffffff;
+      line-height: 1.6;
+    }
+
     header {
       width: 100%;
-      background: #08111c;
-      border-bottom: 1px solid #1e3a4c;
+      background: #07111f;
+      border-bottom: 1px solid #17324a;
       position: sticky;
       top: 0;
       z-index: 1000;
     }
 
     nav {
-      max-width: 1150px;
+      max-width: 1200px;
       margin: auto;
+      padding: 22px 24px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 18px 20px;
     }
 
     .logo {
-      color: #42c7ff;
-      font-size: 24px;
+      color: #38bdf8;
+      font-size: 26px;
       font-weight: bold;
     }
 
     nav ul {
       list-style: none;
       display: flex;
-      gap: 28px;
+      gap: 32px;
     }
 
-    nav ul li a {
-      color: #dbeafe;
+    nav a {
+      color: #e5f4ff;
       text-decoration: none;
-      font-size: 15px;
+      font-size: 16px;
       transition: 0.3s;
     }
 
-    nav ul li a:hover {
-      color: #42c7ff;
+    nav a:hover {
+      color: #38bdf8;
     }
 
     .hero {
-      min-height: 85vh;
+      min-height: 86vh;
       background:
-        linear-gradient(rgba(8,17,28,0.86), rgba(8,17,28,0.9)),
+        linear-gradient(90deg, rgba(7,17,31,0.96), rgba(7,17,31,0.78)),
         url("https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1600&q=80");
       background-size: cover;
       background-position: center;
       display: flex;
       align-items: center;
-      padding: 70px 20px;
+      padding: 80px 24px;
     }
 
     .hero-container {
-      max-width: 1150px;
+      width: 100%;
+      max-width: 1200px;
       margin: auto;
       display: grid;
-      grid-template-columns: 1.6fr 0.9fr;
+      grid-template-columns: 1.4fr 0.9fr;
       gap: 60px;
       align-items: center;
     }
 
     .badge {
       display: inline-block;
-      border: 1px solid #2f6f8f;
-      color: #b9fbc0;
-      padding: 8px 18px;
-      border-radius: 25px;
-      font-size: 13px;
+      border: 1px solid #24749b;
+      color: #bbf7d0;
+      background: rgba(14, 40, 58, 0.75);
+      padding: 10px 22px;
+      border-radius: 30px;
+      font-size: 14px;
       font-weight: bold;
       letter-spacing: 1px;
-      margin-bottom: 20px;
-      background: rgba(10, 30, 45, 0.8);
+      margin-bottom: 28px;
     }
 
     .hero h1 {
-      font-size: 52px;
-      margin-bottom: 12px;
+      font-size: 58px;
+      line-height: 1.1;
+      margin-bottom: 22px;
     }
 
     .hero h1 span {
@@ -109,58 +112,58 @@
 
     .hero h2 {
       color: #fde68a;
-      font-size: 25px;
-      margin-bottom: 25px;
+      font-size: 28px;
+      margin-bottom: 28px;
     }
 
     .hero p {
-      max-width: 670px;
+      max-width: 760px;
       color: #dbeafe;
-      font-size: 17px;
-      margin-bottom: 32px;
+      font-size: 18px;
+      margin-bottom: 36px;
     }
 
     .buttons {
       display: flex;
-      gap: 14px;
+      gap: 18px;
       flex-wrap: wrap;
     }
 
     .btn {
-      padding: 14px 28px;
+      padding: 15px 30px;
       border-radius: 8px;
       text-decoration: none;
       font-weight: bold;
-      transition: 0.3s;
       display: inline-block;
+      transition: 0.3s;
     }
 
     .btn-primary {
       background: linear-gradient(135deg, #38bdf8, #34d399);
-      color: #03111f;
+      color: #06121f;
     }
 
     .btn-secondary {
       border: 2px solid #38bdf8;
-      color: #dbeafe;
+      color: #e5f4ff;
     }
 
     .btn:hover {
-      transform: translateY(-3px);
+      transform: translateY(-4px);
     }
 
     .focus-card {
-      background: rgba(15, 32, 48, 0.86);
-      border: 1px solid #27516a;
-      border-radius: 18px;
-      padding: 32px;
-      box-shadow: 0 0 25px rgba(56,189,248,0.25);
+      background: rgba(12, 31, 48, 0.9);
+      border: 1px solid #285979;
+      border-radius: 20px;
+      padding: 38px;
+      box-shadow: 0 0 28px rgba(56, 189, 248, 0.22);
     }
 
     .focus-card h3 {
       color: #fde68a;
-      margin-bottom: 20px;
-      font-size: 22px;
+      font-size: 28px;
+      margin-bottom: 26px;
     }
 
     .focus-card ul {
@@ -168,37 +171,48 @@
     }
 
     .focus-card li {
-      margin-bottom: 16px;
-      color: #dbeafe;
+      color: #e5f4ff;
+      font-size: 18px;
+      margin-bottom: 20px;
     }
 
     .focus-card li::before {
       content: "●";
       color: #34d399;
-      margin-right: 12px;
+      margin-right: 14px;
     }
 
     section {
-      padding: 80px 20px;
+      padding: 85px 24px;
     }
 
     .container {
-      max-width: 1150px;
+      max-width: 1200px;
       margin: auto;
     }
 
     .section-title {
       text-align: center;
-      font-size: 34px;
-      margin-bottom: 45px;
+      font-size: 36px;
       color: #38bdf8;
+      margin-bottom: 18px;
     }
 
-    .about p {
+    .section-subtitle {
+      text-align: center;
+      color: #cbd5e1;
+      max-width: 850px;
+      margin: 0 auto 48px;
+      font-size: 17px;
+    }
+
+    .about-box {
+      background: #0d1d2d;
+      border: 1px solid #213f59;
+      padding: 34px;
+      border-radius: 16px;
       color: #dbeafe;
       font-size: 17px;
-      max-width: 900px;
-      margin: auto;
       text-align: center;
     }
 
@@ -206,28 +220,28 @@
     .projects-grid,
     .experience-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
       gap: 24px;
     }
 
     .card {
-      background: #101f2e;
-      border: 1px solid #1f4057;
+      background: #0d1d2d;
+      border: 1px solid #213f59;
       padding: 28px;
-      border-radius: 14px;
-      transition: 0.3s;
+      border-radius: 16px;
+      transition: 0.35s;
     }
 
     .card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-8px);
       border-color: #38bdf8;
-      box-shadow: 0 0 18px rgba(56,189,248,0.2);
+      box-shadow: 0 0 24px rgba(56, 189, 248, 0.22);
     }
 
     .card h3 {
       color: #fde68a;
-      margin-bottom: 14px;
-      font-size: 21px;
+      font-size: 22px;
+      margin-bottom: 16px;
     }
 
     .card p,
@@ -240,42 +254,73 @@
       padding-left: 18px;
     }
 
+    .tags {
+      margin-top: 18px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .tag {
+      background: #12324a;
+      border: 1px solid #2f6f8f;
+      color: #bff3ff;
+      padding: 7px 12px;
+      border-radius: 20px;
+      font-size: 13px;
+    }
+
     .contact {
       text-align: center;
     }
 
     .contact p {
       color: #dbeafe;
-      margin-bottom: 10px;
       font-size: 17px;
+      margin-bottom: 10px;
     }
 
     footer {
-      background: #08111c;
+      background: #07111f;
+      border-top: 1px solid #17324a;
       text-align: center;
-      padding: 22px;
+      padding: 24px;
       color: #94a3b8;
-      border-top: 1px solid #1e3a4c;
     }
 
-    @media (max-width: 800px) {
+    .reveal {
+      opacity: 0;
+      transform: translateY(45px);
+      transition: all 0.8s ease;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 850px) {
       .hero-container {
         grid-template-columns: 1fr;
       }
 
       .hero h1 {
-        font-size: 40px;
+        font-size: 42px;
+      }
+
+      .hero h2 {
+        font-size: 23px;
       }
 
       nav {
         flex-direction: column;
-        gap: 15px;
+        gap: 16px;
       }
 
       nav ul {
-        gap: 15px;
         flex-wrap: wrap;
         justify-content: center;
+        gap: 18px;
       }
     }
   </style>
@@ -286,6 +331,7 @@
   <header>
     <nav>
       <div class="logo">Kiran Reddy</div>
+
       <ul>
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
@@ -308,10 +354,10 @@
         <h2>Senior Generative AI Engineer | Python | Data Engineering</h2>
 
         <p>
-          I design and build enterprise-grade GenAI, RAG, agentic AI, machine learning,
-          and cloud data platforms. My work focuses on scalable backend engineering,
-          intelligent automation, vector search, LLM applications, and production-ready
-          AI systems.
+          I design and build enterprise-grade Generative AI, RAG, agentic AI,
+          machine learning, and cloud data platforms. My work focuses on scalable
+          backend engineering, intelligent automation, vector search, LLM applications,
+          and production-ready AI systems.
         </p>
 
         <div class="buttons">
@@ -336,120 +382,219 @@
     </div>
   </section>
 
-  <section class="about" id="about">
+  <section id="about" class="reveal">
     <div class="container">
       <h2 class="section-title">About Me</h2>
-      <p>
-        I am a Senior Generative AI and Data Engineering professional with experience
-        building AI/ML platforms, RAG applications, cloud data pipelines, and production
-        APIs. I work across Python, SQL, PySpark, Databricks, Azure OpenAI, LangChain,
-        vector databases, FastAPI, Docker, Kubernetes, and cloud platforms.
+      <p class="section-subtitle">
+        Senior Generative AI Engineer focused on enterprise AI platforms, RAG applications,
+        cloud data systems, and production-ready machine learning solutions.
       </p>
+
+      <div class="about-box">
+        I work across Generative AI, Python backend development, data engineering,
+        and MLOps. My experience includes building LLM applications, RAG workflows,
+        vector search pipelines, FastAPI services, Databricks pipelines, ML models,
+        and cloud-based production systems.
+      </div>
     </div>
   </section>
 
-  <section id="skills">
+  <section id="skills" class="reveal">
     <div class="container">
-      <h2 class="section-title">Skills</h2>
+      <h2 class="section-title">Technical Skills</h2>
+      <p class="section-subtitle">
+        Skills organized by real project usage across GenAI, backend engineering,
+        data engineering, cloud, and production deployment.
+      </p>
 
       <div class="skills-grid">
+
         <div class="card">
           <h3>Generative AI</h3>
           <ul>
             <li>LLMs</li>
             <li>RAG</li>
+            <li>Prompt Engineering</li>
+            <li>Azure OpenAI</li>
+            <li>OpenAI</li>
+            <li>Claude</li>
+            <li>LlamaIndex</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Agentic AI</h3>
+          <ul>
             <li>LangChain</li>
             <li>LangGraph</li>
-            <li>Azure OpenAI</li>
-            <li>Prompt Engineering</li>
+            <li>Multi-Agent Workflows</li>
+            <li>Tool Calling</li>
+            <li>Human-in-the-Loop</li>
+            <li>Workflow Automation</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Vector Search</h3>
+          <ul>
+            <li>FAISS</li>
+            <li>Pinecone</li>
+            <li>Chroma</li>
+            <li>Weaviate</li>
+            <li>Embeddings</li>
+            <li>Semantic Search</li>
+            <li>Hybrid Search</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Python Backend</h3>
+          <ul>
+            <li>Python</li>
+            <li>FastAPI</li>
+            <li>Flask</li>
+            <li>REST APIs</li>
+            <li>Streamlit</li>
+            <li>JSON</li>
+            <li>API Integration</li>
           </ul>
         </div>
 
         <div class="card">
           <h3>Data Engineering</h3>
           <ul>
-            <li>Python</li>
             <li>SQL</li>
             <li>PySpark</li>
             <li>Databricks</li>
             <li>Delta Lake</li>
             <li>ETL Pipelines</li>
+            <li>Airflow</li>
+            <li>Snowflake</li>
           </ul>
         </div>
 
         <div class="card">
-          <h3>Backend & Cloud</h3>
-          <ul>
-            <li>FastAPI</li>
-            <li>REST APIs</li>
-            <li>Docker</li>
-            <li>Kubernetes</li>
-            <li>AWS</li>
-            <li>Azure</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <h3>ML & MLOps</h3>
+          <h3>Machine Learning</h3>
           <ul>
             <li>Scikit-learn</li>
             <li>XGBoost</li>
-            <li>MLflow</li>
-            <li>Model Monitoring</li>
+            <li>LightGBM</li>
+            <li>TensorFlow</li>
+            <li>PyTorch</li>
             <li>Feature Engineering</li>
-            <li>CI/CD</li>
           </ul>
         </div>
-      </div>
 
+        <div class="card">
+          <h3>Cloud & DevOps</h3>
+          <ul>
+            <li>AWS</li>
+            <li>Azure</li>
+            <li>Docker</li>
+            <li>Kubernetes</li>
+            <li>GitHub Actions</li>
+            <li>CI/CD</li>
+            <li>MLflow</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Security</h3>
+          <ul>
+            <li>OAuth2</li>
+            <li>JWT</li>
+            <li>RBAC</li>
+            <li>Audit Logging</li>
+            <li>HIPAA / PHI Awareness</li>
+          </ul>
+        </div>
+
+      </div>
     </div>
   </section>
 
-  <section id="projects">
+  <section id="projects" class="reveal">
     <div class="container">
       <h2 class="section-title">Projects</h2>
+      <p class="section-subtitle">
+        Selected AI engineering projects demonstrating production GenAI systems,
+        RAG platforms, agent workflows, secure backend architecture, and cloud-native data solutions.
+      </p>
 
       <div class="projects-grid">
+
         <div class="card">
-          <h3>Healthcare GenAI RAG Workflow Assistant</h3>
+          <h3>Healthcare GenAI RAG Workflow Intelligence Assistant</h3>
           <p>
-            Built a Streamlit-based GenAI assistant using Python, document retrieval,
-            TF-IDF/vector search concepts, and workflow automation for healthcare
-            document intelligence.
+            Built a GenAI-powered healthcare document intelligence assistant using Python,
+            Streamlit, retrieval-based search, and workflow automation. The system helps
+            users upload healthcare-related documents, search relevant content, and generate
+            AI-assisted responses in a structured workflow.
           </p>
+
+          <div class="tags">
+            <span class="tag">Python</span>
+            <span class="tag">Streamlit</span>
+            <span class="tag">RAG Concepts</span>
+            <span class="tag">TF-IDF</span>
+            <span class="tag">Scikit-learn</span>
+            <span class="tag">Document Search</span>
+          </div>
         </div>
 
         <div class="card">
           <h3>Enterprise Document Intelligence Platform</h3>
           <p>
-            Designed RAG pipelines for internal document search using embeddings,
-            chunking, vector databases, FastAPI services, and secure access controls.
+            Designed RAG pipelines for enterprise document search using embeddings,
+            semantic chunking, vector databases, FastAPI services, access controls,
+            and secure AI-assisted knowledge retrieval.
           </p>
+
+          <div class="tags">
+            <span class="tag">RAG</span>
+            <span class="tag">Vector Search</span>
+            <span class="tag">FastAPI</span>
+            <span class="tag">Embeddings</span>
+            <span class="tag">LLMs</span>
+          </div>
         </div>
 
         <div class="card">
           <h3>AI/ML Fraud Intelligence System</h3>
           <p>
             Developed real-time fraud analytics using Python, machine learning,
-            streaming data, feature engineering, graph analysis, and model monitoring.
+            streaming data, feature engineering, graph analysis, monitoring,
+            and production model deployment practices.
           </p>
-        </div>
-      </div>
 
+          <div class="tags">
+            <span class="tag">Python</span>
+            <span class="tag">ML</span>
+            <span class="tag">Streaming</span>
+            <span class="tag">Feature Engineering</span>
+            <span class="tag">MLOps</span>
+          </div>
+        </div>
+
+      </div>
     </div>
   </section>
 
-  <section id="experience">
+  <section id="experience" class="reveal">
     <div class="container">
       <h2 class="section-title">Experience</h2>
+      <p class="section-subtitle">
+        Experience across healthcare, banking, insurance, retail, and enterprise analytics.
+      </p>
 
       <div class="experience-grid">
+
         <div class="card">
           <h3>Senior GenAI / ML Engineer</h3>
           <p><strong>McKesson</strong></p>
           <p>
-            Working on enterprise GenAI, payment fraud intelligence, RAG workflows,
-            Python APIs, Databricks pipelines, and production AI systems.
+            Built enterprise GenAI, RAG workflows, payment fraud intelligence,
+            Python APIs, Databricks pipelines, ML systems, and production AI platforms.
           </p>
         </div>
 
@@ -457,8 +602,9 @@
           <h3>Senior AI/ML Engineer</h3>
           <p><strong>Wells Fargo</strong></p>
           <p>
-            Built internal AI document intelligence platforms using RAG, vector search,
-            LLM workflows, FastAPI, and cloud-based data systems.
+            Developed internal AI document intelligence platforms using RAG,
+            vector search, LLM workflows, FastAPI, secure access patterns,
+            and cloud-based data systems.
           </p>
         </div>
 
@@ -466,23 +612,23 @@
           <h3>Data Scientist / AI Engineer</h3>
           <p><strong>New York Life, Kroger, Zensar</strong></p>
           <p>
-            Delivered machine learning, forecasting, risk analytics, data engineering,
-            and BI solutions across insurance, retail, and enterprise domains.
+            Delivered ML models, forecasting solutions, underwriting analytics,
+            demand planning, ETL pipelines, dashboards, and enterprise BI solutions.
           </p>
         </div>
-      </div>
 
+      </div>
     </div>
   </section>
 
-  <section class="contact" id="contact">
+  <section id="contact" class="contact reveal">
     <div class="container">
       <h2 class="section-title">Contact</h2>
 
       <p>Email: kiranaragonda14@gmail.com</p>
       <p>LinkedIn: www.linkedin.com/in/kiranreddy98</p>
       <p>GitHub: github.com/kiranaragonda14</p>
-    <p>Portfolio: kiranaragonda14.github.io/kiran-portfolio</p>
+      <p>Portfolio: kiranaragonda14.github.io/kiran-portfolio</p>
 
       <br />
 
@@ -493,6 +639,26 @@
   <footer>
     <p>© 2026 Kiran Reddy. All Rights Reserved.</p>
   </footer>
+
+  <script>
+    window.addEventListener("scroll", reveal);
+
+    function reveal() {
+      const reveals = document.querySelectorAll(".reveal");
+
+      for (let i = 0; i < reveals.length; i++) {
+        const windowHeight = window.innerHeight;
+        const elementTop = reveals[i].getBoundingClientRect().top;
+        const elementVisible = 120;
+
+        if (elementTop < windowHeight - elementVisible) {
+          reveals[i].classList.add("active");
+        }
+      }
+    }
+
+    reveal();
+  </script>
 
 </body>
 </html>
